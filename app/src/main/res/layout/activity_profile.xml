@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient">
+
+    <!-- Фон основного белого листа (Rectangle 82) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sheet_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
+        app:cardBackgroundColor="#F4F5F5"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Header Pill (Rectangle 83) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/header_pill"
+                android:layout_width="191dp"
+                android:layout_height="77dp"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="38dp"
+                app:cardBackgroundColor="#D1E0DB"
+                app:cardCornerRadius="20dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/profile_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:hint="ФИО"
+                    android:textColor="#444E5A"
+                    android:textSize="12sp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Avatar Container -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/avatar_container"
+                android:layout_width="79dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="41dp"
+                app:cardBackgroundColor="#D1E0DB"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/avatar_image"
+                    android:layout_width="59dp"
+                    android:layout_height="52.68dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Аватар пользователя"
+                    android:src="@drawable/ic_profile" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Profile Name -->
+
+            <!-- Content Container (Rectangle 84) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/content_container"
+                android:layout_width="290dp"
+                android:layout_height="467dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="136dp"
+                app:cardBackgroundColor="#ECECEC"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/profile_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="top"
+                    android:hint="Описание"
+                    android:padding="16dp"
+                    android:textColor="#444E5A"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Изображение с иконками спорта -->
+    <ImageView
+        android:id="@+id/sport_icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:contentDescription="Спортивные иконки"
+        android:src="@drawable/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Кнопка назад (Group 27) -->
+    <ImageView
+        android:id="@+id/profile_back"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/back_button_background"
+        android:contentDescription="Назад"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

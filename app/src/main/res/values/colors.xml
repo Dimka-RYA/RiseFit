@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_background">#D1E0DB</color>
+    <color name="main_background">#D1E0DB</color>
+    <color name="button_color">#444E5A</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_700">#018786</color>
+</resources>

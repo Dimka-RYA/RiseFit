@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RiseFit</string>
+    <string name="login_prompt">Уже есть аккаунт? Войти</string>
+    <string name="register_prompt">Нет аккаунта? Зарегистрироваться</string>
+    <string name="back_button_desc">Кнопка Назад</string>
+    <string name="button">Button</string>
+</resources>
