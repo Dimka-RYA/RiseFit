@@ -81,12 +81,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Дата плана -->
+
+            <!-- Кнопка добавления плана питания -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/date_container"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:layout_marginHorizontal="28dp"
-                android:layout_marginTop="520dp"
+                android:layout_marginTop="392dp"
                 app:cardBackgroundColor="#ECECEC"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp"
@@ -110,7 +112,6 @@
                     android:textSize="16sp" />
             </androidx.cardview.widget.CardView>
 
-            <!-- Кнопка добавления плана питания -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/add_nutrition_plan_button"
                 android:layout_width="match_parent"
