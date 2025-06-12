@@ -3,18 +3,17 @@ package com.example.risefit
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ClientAdapter(
-    private val originalList: MutableList<Client>,
-    private val onDelete: (Client) -> Unit,
-    private val onEdit: (Client) -> Unit
+    private var clients: MutableList<Client>,
+    private val onDelete: (Int) -> Unit,
+    private val onEdit: (Int) -> Unit
 ) : RecyclerView.Adapter<ClientAdapter.ClientViewHolder>() {
 
-    private var displayList: MutableList<Client> = originalList.toMutableList()
+    private var filteredClients: MutableList<Client> = clients.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_client, parent, false)
@@ -22,43 +21,69 @@ class ClientAdapter(
     }
 
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
-        val client = displayList[position]
-        holder.name.text = client.name
-        holder.description.text = client.description
-        holder.date.text = client.date
-        holder.deleteButton.setOnClickListener {
-            onDelete(client)
-            originalList.remove(client)
-            filter(currentFilter)
-        }
-        holder.editButton.setOnClickListener {
-            onEdit(client)
-        }
+        val client = filteredClients[position]
+        holder.bind(client)
     }
 
-    override fun getItemCount(): Int = displayList.size
+    override fun getItemCount(): Int = filteredClients.size
 
     inner class ClientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name: TextView = itemView.findViewById(R.id.client_name)
-        val description: TextView = itemView.findViewById(R.id.client_description)
-        val date: TextView = itemView.findViewById(R.id.client_date)
-        val deleteButton: ImageButton = itemView.findViewById(R.id.delete_button)
-        val editButton: ImageButton = itemView.findViewById(R.id.edit_button)
+        private val name: TextView = itemView.findViewById(R.id.client_name)
+        private val description: TextView = itemView.findViewById(R.id.client_description)
+        private val date: TextView = itemView.findViewById(R.id.client_date)
+        private val deleteButton: ImageButton = itemView.findViewById(R.id.delete_button)
+        private val editButton: ImageButton = itemView.findViewById(R.id.edit_button)
+
+        fun bind(client: Client) {
+            name.text = client.name
+            description.text = client.description
+            date.text = client.date
+
+            deleteButton.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onDelete(position)
+                }
+            }
+            editButton.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onEdit(position)
+                }
+            }
+        }
     }
 
-    private var currentFilter: String = ""
-
     fun filter(query: String) {
-        currentFilter = query
-        displayList.clear()
-        if (query.isEmpty()) {
-            displayList.addAll(originalList)
+        val lowerCaseQuery = query.lowercase()
+        filteredClients = if (query.isEmpty()) {
+            clients.toMutableList()
         } else {
-            val lowerQuery = query.lowercase()
-            displayList.addAll(originalList.filter {
-                it.name.lowercase().contains(lowerQuery)
-            })
+            clients.filter { it.name.lowercase().contains(lowerCaseQuery) }.toMutableList()
         }
         notifyDataSetChanged()
+    }
+
+    fun getClientAt(position: Int): Client {
+        return filteredClients[position]
+    }
+
+    fun addItem(client: Client) {
+        clients.add(0, client)
+        filter("")
+    }
+
+    fun removeItem(position: Int) {
+        val clientToRemove = filteredClients[position]
+        clients.remove(clientToRemove)
+        filter("")
+    }
+
+    fun updateItem(position: Int, client: Client) {
+        val originalIndex = clients.indexOf(filteredClients[position])
+        if (originalIndex != -1) {
+            clients[originalIndex] = client
+        }
+        filter("")
     }
 } 

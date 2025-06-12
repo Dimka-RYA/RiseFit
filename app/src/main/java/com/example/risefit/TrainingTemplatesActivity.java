@@ -2,83 +2,69 @@ package com.example.risefit;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.risefit.ShablonPlanDetailActivity;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class TrainingTemplatesActivity extends AppCompatActivity {
 
-    private CardView template1;
-    private CardView template2;
-    private CardView template3;
-    private CardView template4;
-    private CardView btnAddTemplate;
+    private LinearLayout templatesContainer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_templates_screen);
 
-        // Инициализация элементов
-        template1 = findViewById(R.id.template1);
-        template2 = findViewById(R.id.template2);
-        template3 = findViewById(R.id.template3);
-        template4 = findViewById(R.id.template4);
-        btnAddTemplate = findViewById(R.id.btnAddTemplate);
+        templatesContainer = findViewById(R.id.templates_list_container);
+        CardView addTemplateButton = findViewById(R.id.btnAddTemplate);
 
-        // Настройка обработчиков нажатий
-        template1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Открытие деталей шаблона 1
-                Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
-                intent.putExtra("template_index", 1);
-                startActivity(intent);
-            }
+        addTemplateButton.setOnClickListener(v -> {
+            Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
+            startActivity(intent);
         });
+    }
 
-        template2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Открытие деталей шаблона 2
-                Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
-                intent.putExtra("template_index", 2);
-                startActivity(intent);
-            }
-        });
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateTemplatesList();
+    }
 
-        template3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Открытие деталей шаблона 3
-                Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
-                intent.putExtra("template_index", 3);
-                startActivity(intent);
-            }
-        });
+    private void updateTemplatesList() {
+        templatesContainer.removeAllViews(); // Очищаем список перед обновлением
 
-        template4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Открытие деталей шаблона 4
-                Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
-                intent.putExtra("template_index", 4);
-                startActivity(intent);
-            }
-        });
+        for (int i = 0; i < TemplateRepository.templates.size(); i++) {
+            final int index = i;
+            TemplateRepository.Template template = TemplateRepository.templates.get(index);
 
-        btnAddTemplate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Переход к созданию нового шаблона
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View templateView = inflater.inflate(R.layout.template_list_item, templatesContainer, false);
+
+            TextView title = templateView.findViewById(R.id.tvTemplateTitle);
+            TextView date = templateView.findViewById(R.id.tvTemplateDate);
+            TextView description = templateView.findViewById(R.id.tvTemplateDescription);
+            CardView goToTemplateButton = templateView.findViewById(R.id.btn_go_to_template);
+
+            title.setText(template.title);
+            date.setText(template.date);
+            description.setText(template.description);
+
+            goToTemplateButton.setOnClickListener(v -> {
                 Intent intent = new Intent(TrainingTemplatesActivity.this, ShablonPlanDetailActivity.class);
-                intent.putExtra("template_index", -1);
+                intent.putExtra("TEMPLATE_INDEX", index);
                 startActivity(intent);
-            }
-        });
+            });
+
+            templatesContainer.addView(templateView, 0); // Добавляем новый шаблон в начало списка
+        }
     }
 } 

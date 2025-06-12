@@ -103,12 +103,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Тренировка 1                        Дата"
+                        android:text="Тренировка 1"
+                        android:textColor="#444E5A"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/training_date_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/training_date_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Дата"
                         android:textColor="#444E5A"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView
@@ -156,12 +170,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Тренировка 2                        Дата"
+                        android:text="Тренировка 2"
+                        android:textColor="#444E5A"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/training_date_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/training_date_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Дата"
                         android:textColor="#444E5A"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView
@@ -209,12 +237,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Тренировка 3                        Дата"
+                        android:text="Тренировка 3"
+                        android:textColor="#444E5A"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/training_date_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/training_date_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Дата"
                         android:textColor="#444E5A"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView
@@ -262,12 +304,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Тренировка 4                        Дата"
+                        android:text="Тренировка 4"
+                        android:textColor="#444E5A"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/training_date_4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/training_date_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Дата"
                         android:textColor="#444E5A"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView
@@ -314,12 +370,26 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:text="Тренировка 5                        Дата"
+                        android:text="Тренировка 5"
+                        android:textColor="#444E5A"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/training_date_5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/training_date_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Дата"
                         android:textColor="#444E5A"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView

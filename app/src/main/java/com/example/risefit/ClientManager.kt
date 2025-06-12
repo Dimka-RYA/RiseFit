@@ -49,4 +49,13 @@ class ClientManager(context: Context) {
         list.remove(client)
         saveClients(list)
     }
+
+    // Обновление клиента по индексу
+    fun updateClient(index: Int, client: Client) {
+        val list = getClients().toMutableList()
+        if (index >= 0 && index < list.size) {
+            list[index] = client
+            saveClients(list)
+        }
+    }
 } 

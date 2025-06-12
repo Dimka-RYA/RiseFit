@@ -34,7 +34,7 @@
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="8dp"
         android:fontFamily="@font/montserrat_regular"
-        android:hint="search"
+        android:hint="Поиск"
         android:padding="12dp"
         android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@id/barbell_icon"
