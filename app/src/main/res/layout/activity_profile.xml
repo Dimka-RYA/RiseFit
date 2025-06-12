@@ -81,8 +81,8 @@
             <!-- Content Container (Rectangle 84) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/content_container"
-                android:layout_width="290dp"
-                android:layout_height="467dp"
+                android:layout_width="230dp"
+                android:layout_height="420dp"
                 android:layout_marginStart="29dp"
                 android:layout_marginTop="136dp"
                 app:cardBackgroundColor="#ECECEC"

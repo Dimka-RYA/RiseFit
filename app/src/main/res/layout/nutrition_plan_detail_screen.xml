@@ -53,50 +53,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnArchive"
-                android:layout_width="296dp"
-                android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="#ECECEC"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnTemplate"
-                app:layout_constraintEnd_toEndOf="@+id/btnDone"
-                app:layout_constraintStart_toStartOf="@+id/btnDone">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="Перейти в архив"
-                    android:textColor="#444E5A"
-                    android:textSize="16sp" />
-            </androidx.cardview.widget.CardView>
-
             <!-- Кнопка "Использовать шаблон" -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnTemplate"
-                android:layout_width="296dp"
-                android:layout_height="38dp"
-                android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="#ECECEC"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnDone"
-                app:layout_constraintEnd_toEndOf="@+id/btnDone"
-                app:layout_constraintStart_toStartOf="@+id/btnDone">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:text="Использовать шаблон"
-                    android:textColor="#444E5A"
-                    android:textSize="16sp" />
-            </androidx.cardview.widget.CardView>
 
             <!-- Кнопка "ГОТОВО" -->
             <androidx.cardview.widget.CardView
@@ -148,6 +105,24 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Поле ввода текста плана питания -->
+            <EditText
+                android:id="@+id/etNutritionPlanInput"
+                android:layout_width="280dp"
+                android:layout_height="320dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/montserrat"
+                android:gravity="top|start"
+                android:hint="Введите план питания..."
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="#444E5A"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/btnDone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNutritionPlanTitle"
+                app:layout_constraintVertical_bias="0.3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
